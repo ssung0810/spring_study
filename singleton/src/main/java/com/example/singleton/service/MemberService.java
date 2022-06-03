@@ -1,8 +1,6 @@
 package com.example.singleton.service;
 
-public class MemberService {
+public interface MemberService {
 
-    public String save() {
-        return "싱글톤 적용안됨";
-    }
+    public String singletonStatus();
 }
