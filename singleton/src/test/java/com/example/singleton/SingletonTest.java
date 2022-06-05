@@ -1,5 +1,7 @@
 package com.example.singleton;
 
+import com.example.singleton.repository.MemberRepository;
+import com.example.singleton.service.MemberService;
 import com.example.singleton.service.MemberServiceImpl;
 import com.example.singleton.service.MemberServiceImplSingleton;
 import org.junit.jupiter.api.Test;
@@ -50,5 +52,17 @@ public class SingletonTest {
         System.out.println("memberService2 = " + memberService2);
 
         assertThat(memberService1).isSameAs(memberService2);
+    }
+
+    @Test
+    void Configuration_테스트() throws Exception {
+        // given
+        ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+        AppConfig appConfig = ac.getBean(AppConfig.class);
+
+        System.out.println("appConfig = " + appConfig.getClass());
+
+//        MemberService memberService = ac.getBean("memberService", MemberService.class);
+//        MemberRepository memberRepository = ac.getBean("memberRepository", MemberRepository.class);
     }
 }
