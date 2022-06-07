@@ -16,8 +16,8 @@ public class SingletonTest {
     void 두_개의_객체_생성_싱글톤_적용_안함() throws Exception {
         // given
         AppConfig appConfig = new AppConfig();
-        MemberServiceImpl memberService1 = appConfig.memberService();
-        MemberServiceImpl memberService2 = appConfig.memberService();
+        MemberServiceImpl memberService1 = appConfig.memberServiceImpl();
+        MemberServiceImpl memberService2 = appConfig.memberServiceImpl();
 
         // when, then
         System.out.println("memberService1 = " + memberService1);
@@ -44,8 +44,8 @@ public class SingletonTest {
     void Spring을_사용한_싱글톤_적용() throws Exception {
         // given
         ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
-        MemberServiceImpl memberService1 = ac.getBean("memberService", MemberServiceImpl.class);
-        MemberServiceImpl memberService2 = ac.getBean("memberService", MemberServiceImpl.class);
+        MemberServiceImpl memberService1 = ac.getBean("memberServiceImpl", MemberServiceImpl.class);
+        MemberServiceImpl memberService2 = ac.getBean("memberServiceImpl", MemberServiceImpl.class);
 
         // when, then
         System.out.println("memberService1 = " + memberService1);

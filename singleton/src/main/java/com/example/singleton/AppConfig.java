@@ -5,13 +5,15 @@ import com.example.singleton.service.MemberServiceImpl;
 import com.example.singleton.service.MemberServiceImplSingleton;
 import com.example.singleton.status.StatefulService;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-//@Configuration
+@Configuration
+@ComponentScan
 public class AppConfig {
 
     @Bean
-    public MemberServiceImpl memberService() {
+    public MemberServiceImpl memberServiceImpl() {
         System.out.println("call memberService");
         return new MemberServiceImpl(memberRepository());
     }
