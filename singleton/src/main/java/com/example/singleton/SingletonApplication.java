@@ -13,19 +13,6 @@ public class SingletonApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SingletonApplication.class, args);
-
-		AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext();
-
-		String[] beanDefinitionNames = ac.getBeanDefinitionNames();
-
-		for (String beanDefinitionName : beanDefinitionNames) {
-			BeanDefinition beanDefinition = ac.getBeanDefinition(beanDefinitionName);
-
-			if (beanDefinition.getRole() == BeanDefinition.ROLE_APPLICATION) {
-				Object bean = ac.getBean(beanDefinitionName);
-				System.out.println("name = " + beanDefinitionName + " || bean = " + bean);
-			}
-		}
 	}
 
 }
