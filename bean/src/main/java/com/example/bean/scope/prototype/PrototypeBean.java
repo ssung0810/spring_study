@@ -1,4 +1,4 @@
-package com.example.bean.prototype;
+package com.example.bean.scope.prototype;
 
 import org.springframework.context.annotation.Scope;
 
@@ -6,7 +6,7 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 @Scope("prototype")
-public class PrototypeClient {
+public class PrototypeBean {
 
     private int count = 0;
 

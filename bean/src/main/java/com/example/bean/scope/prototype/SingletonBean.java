@@ -1,19 +1,18 @@
-package com.example.bean.prototype;
+package com.example.bean.scope.prototype;
 
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-public class SingletonClient {
+public class SingletonBean {
 
     @Autowired
-    private ObjectProvider<PrototypeClient> prototypeClientProvider;
+    private ObjectProvider<PrototypeBean> prototypeClientProvider;
 
     public int logic() {
-        PrototypeClient prototypeClient = prototypeClientProvider.getObject();
+        PrototypeBean prototypeClient = prototypeClientProvider.getObject();
         prototypeClient.addCount();
         return prototypeClient.getCount();
     }
